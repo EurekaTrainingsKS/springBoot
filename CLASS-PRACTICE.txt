@@ -1,0 +1,43 @@
+SPRING BOOT CLASS CATCH-UP - SUMANTH
+
+This project contains the professor's examples from commit e3958e1.
+The controller examples were already complete in the clone. Added tests
+verify their behavior; they are not new assignment requirements.
+
+1. In IntelliJ choose File > Open and select this springBoot folder.
+2. Load the Maven project when prompted.
+3. Under File > Project Structure choose Java 21 as Project SDK.
+   Installed JDK: C:\Program Files\Java\jdk-21.0.10
+   In Maven Runner settings also use the Project JDK.
+4. Open src/main/java/com/stocks/project/DemoApplication.java.
+5. Click the green arrow beside main and choose Run.
+6. Wait for the Started DemoApplication message. The server stays running.
+7. Open these URLs in your browser:
+   http://localhost:8081/helloWorld
+   http://localhost:8081/helloWorld/Sumanth
+   http://localhost:8081/helloWorldRequest?firstName=Sumanth&secondName=Dyapa
+8. Use IntelliJ's red Stop button when finished.
+
+WHAT HAPPENS
+main calls SpringApplication.run to initialize Spring and the embedded server.
+@SpringBootApplication combines configuration, auto-configuration and component scanning.
+@RestController registers the controller and writes return values to HTTP responses.
+@GetMapping connects a URL to a method for GET requests.
+@PathVariable gets a value from the URL path, such as /Sumanth.
+@RequestParam gets a value after ?, such as firstName=Sumanth.
+The & separates query parameters. Missing a required parameter produces HTTP 400.
+These endpoints return plain text; REST responses do not have to be JSON.
+application.properties sets the application name and port 8081.
+pom.xml declares Java 21, Spring Web, testing dependencies and the build plugin.
+Maven compiles, tests and packages the app. Spring Boot's executable JAR includes
+an embedded server; it does not need a separately installed Tomcat.
+
+PRACTICE
+Change Sumanth in the URL to your own name and observe the response.
+Try omitting secondName and explain the 400 response.
+Read HelloWorldControllerTests.java to see the same cases checked automatically.
+Run tests by right-clicking src/test/java and selecting Run All Tests.
+
+GIT
+Work on feature/sumanthdyapa. Check git status before each commit.
+Keep .idea and target out of Git. Do not push your work to master.
